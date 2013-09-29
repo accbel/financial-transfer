@@ -55,15 +55,10 @@ describe Transfer do
     end
   end
 
-  it 'it should have a fee greater than zero' do
-    [nil, 0, '0', -0.0001].each do |fee|
-      subject.fee = fee
-      subject.should_not be_valid
-    end
-  end
+  context 'when saving a new transfer' do
+    subject { create :transfer }
 
-  it 'should have a type' do
-    subject.type = nil
-    subject.should_not be_valid
+    its(:fee_type) { should_not be_nil }
+    its(:fee) { should_not be_nil }
   end
 end

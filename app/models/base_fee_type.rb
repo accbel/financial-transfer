@@ -14,7 +14,7 @@ class BaseFeeType
   def fee_value; end
 
   def apply_type
-    @transfer.type = fee_type
+    @transfer.fee_type = fee_type
   end
 
   def apply_fee

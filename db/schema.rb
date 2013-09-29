@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 20130928150855) do
   create_table "transfers", force: true do |t|
     t.string   "source_account"
     t.string   "destination_account"
-    t.decimal  "amount"
-    t.decimal  "fee"
+    t.decimal  "amount",              precision: 8, scale: 2
+    t.decimal  "fee",                 precision: 8, scale: 2
     t.date     "due_date"
-    t.string   "type"
+    t.string   "fee_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -2,13 +2,13 @@ require 'spec_helper'
 
 describe FeeTypeB do
 
-  let(:sample) { build(:transfer,fee: 0,type: nil) }
+  let(:sample) { build(:transfer,fee: 0,fee_type: nil) }
 
   describe '#apply' do
 
     before { described_class.new(sample).apply }
 
-    it { sample.type.should == 'B' }
+    it { sample.fee_type.should == 'B' }
 
     context 'due date less or equal to 30 days' do
       let(:sample) { build(:transfer,due_date: Date.today + 30.day)}
