@@ -113,6 +113,8 @@ pt-BR:
       less_than: deve ser menor que %{count}
       less_than_or_equal_to: deve ser menor ou igual a %{count}
       not_a_number: não é um número
+      not_a_date: não é uma data válida
+      after_or_equal_to: deve ser maior que %{date}
       not_an_integer: não é um número inteiro
       odd: deve ser ímpar
       record_invalid: ! 'A validação falhou: %{errors}'
@@ -212,6 +214,9 @@ pt-BR:
     attributes:
       transfer:
         source_account: "Conta de origem"
+        destination_account: "Conta de destino"
+        amount: "Valor"
+        due_date: "Data de efetivação"
     errors:
       <<: *errors
       models:

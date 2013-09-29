@@ -1,0 +1,29 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Conta de origem</th>
+      <th>Conta de destino</th>
+      <th>Executar em?</th>
+      <th>Valor</th>
+      <th>Taxas</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transfers.each do |t| %>
+      <tr>
+        <td><%= t.fee_type %></td>
+        <td><%= t.source_account %></td>
+        <td><%= t.destination_account %></td>
+        <td><%= l(t.due_date) %></td>
+        <td><%= number_to_currency(t.amount) %></td>
+        <td><%= number_to_currency(t.fee) %></td>
+        <td><%= link_to 'Excluir', t, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="pull-left">
+  <%= link_to 'Nova transferência', new_transfer_path, class: 'btn btn-primary' %>
+</div>

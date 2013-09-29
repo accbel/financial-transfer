@@ -41,6 +41,7 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem 'database_cleaner', '< 1.1.0'
   gem 'pry'
+  gem 'capybara'
 end
 
 # Use ActiveModel has_secure_password
