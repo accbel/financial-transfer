@@ -1,0 +1,5 @@
+<%= form_for @transfer, html: {class: "nifty_form"} do |f| %>
+  <%= f.text_field :source_account %>
+  <%= f.text_field :destination_account %>
+  <%= f.submit "Create" %>
+<% end %>

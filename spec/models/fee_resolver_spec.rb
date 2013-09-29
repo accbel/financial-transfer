@@ -17,8 +17,8 @@ describe FeeResolver do
     its(:fee_type) { should == 'B' }
   end
 
-  context 'when transfer value is above 120000' do
-    subject { build(:transfer,amount:rand(25001..999999),fee_type:nil) }
+  context 'when transfer value is greater than or equal to 120001' do
+    subject { build(:transfer,amount:rand(120001..999999),fee_type:nil) }
 
     its(:fee_type) { should == 'C' }
   end
